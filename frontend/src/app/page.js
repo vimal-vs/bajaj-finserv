@@ -12,8 +12,9 @@ export default function Home() {
 
   const options = [
     { label: "Numbers", value: "numbers" },
+    { label: "Alphabets", value: "alphabets" },
     {
-      label: "Highest Lowercase Alphabet",
+      label: "Highest lowercase Alphabet",
       value: "highest_lowercase_alphabet",
     },
   ];
@@ -48,7 +49,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center py-20">
-      <div className="w-[90%] md:w-[400px] space-y-8">
+      <div className="w-[90%] md:w-[500px] space-y-8">
         <TextField
           id="outlined-basic"
           label="API Input"
