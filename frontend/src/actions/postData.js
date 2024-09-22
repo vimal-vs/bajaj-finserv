@@ -1,10 +1,9 @@
 import axios from "axios";
 
-export const postData = async (parsedData, file_b64) => {
+export const postData = async (parsedData) => {
   try {
     const data = {
       ...parsedData,
-      file_b64,
     };
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/bfhl`,

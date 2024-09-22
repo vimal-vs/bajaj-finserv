@@ -36,9 +36,7 @@ export default function Home() {
     }
     try {
       const parsedData = JSON.parse(data);
-      const file_b64 =
-        "data:imag;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAgcBApI8U1sAAAAASUVORK5CYII=";
-      const response = await postData(parsedData, file_b64);
+      const response = await postData(parsedData);
       if (response) {
         message.success("Data processed.");
         setResponseData(response?.data);

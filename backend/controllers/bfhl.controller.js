@@ -4,6 +4,10 @@ exports.postData = async (req, res) => {
   try {
     const { data, file_b64 } = req.body;
     console.log(data);
+    let file = "";
+    if (file_b64) {
+      file = file_b64;
+    }
     if (!Array.isArray(data) || data.length === 0) {
       res.status(400).json({ error: "Data must have atleast one value." });
       return;
@@ -22,7 +26,6 @@ exports.postData = async (req, res) => {
         .filter((item) => item === item.toLowerCase())
         .sort((a, b) => b.localeCompare(a))[0] || null;
 
-    // 3. File Handling
     const file_valid = validateFile(file_b64);
     const { mime_type, size_kb } = getFileDetails(file_b64);
 
