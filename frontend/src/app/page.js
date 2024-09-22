@@ -77,12 +77,9 @@ export default function Home() {
         )}
         {filter?.length > 0 && (
           <>
-            <div>
-              <h3 className="font-semibold">Response Data:</h3>
-            </div>
             {Object.keys(filteredResponse).length > 0 && (
               <div className="mt-5">
-                <h3 className="font-semibold mb-2">Filtered Response:</h3>
+                <h3 className="font-semibold mb-2">Filtered Response</h3>
                 {Object.keys(filteredResponse).map((key) => (
                   <div key={key} className="flex gap-2 mb-2">
                     <p>{key}:</p>
