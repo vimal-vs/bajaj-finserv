@@ -17,15 +17,10 @@ exports.postData = async (req, res) => {
     const numbers = data.filter((item) => !isNaN(item));
     const alphabets = data.filter((item) => isNaN(item));
 
-    let highest_alphabet = "";
-    alphabets.forEach((alphabet) => {
-      if (
-        !highest_alphabet ||
-        alphabet.toLowerCase() > highest_alphabet.toLowerCase()
-      ) {
-        highest_alphabet = alphabet;
-      }
-    });
+    let highest_alphabet =
+      alphabets
+        .filter((item) => item === item.toLowerCase())
+        .sort((a, b) => b.localeCompare(a))[0] || null;
 
     // 3. File Handling
     const file_valid = validateFile(file_b64);
@@ -33,12 +28,13 @@ exports.postData = async (req, res) => {
 
     let response = {
       is_success: true,
-      user_id: "Vimal",
-      email: "john@xyz.com",
-      roll_number: "ABCD123",
+      user_id: "Vimal_Sakkthi_24032004",
+      email: "vv4861@srmist.edu.in",
+      roll_number: "RA2111003050008",
       numbers: numbers,
       alphabets: alphabets,
-      highest_alphabet: highest_alphabet !== "" ? [highest_alphabet] : [],
+      highest_lowercase_alphabet:
+        highest_alphabet !== "" ? [highest_alphabet] : [],
       file_valid,
     };
 

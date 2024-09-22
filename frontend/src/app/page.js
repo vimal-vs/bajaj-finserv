@@ -12,7 +12,7 @@ export default function Home() {
 
   const options = [
     { label: "Numbers", value: "numbers" },
-    { label: "Highest Alphabet", value: "highest_alphabet" },
+    { label: "Highest Alphabet", value: "highest_lowercase_alphabet" },
   ];
 
   const handleChange = (value) => {
